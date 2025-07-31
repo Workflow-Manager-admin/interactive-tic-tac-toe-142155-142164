@@ -29,6 +29,115 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* === Minimalistic Tic Tac Toe App === */
+.ttt-container {
+  background: #fff;
+  border-radius: 22px;
+  margin: auto;
+  margin-top: 3vh;
+  box-shadow: 0 2px 20px 0 #e9ecef59,0 0.5px 1px #a7b2c5ab;
+  padding: 2.2rem 2rem 2.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 340px;
+}
+
+.ttt-title {
+  margin-bottom: 1.2rem;
+  color: var(--primary, #1976d2);
+  font-size: 2.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.ttt-controls {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ttt-btn {
+  padding: 0.6em 2.1em;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  margin: 0 0.3rem;
+  box-shadow: 0 1px 6px 0 #dee3ea0f;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.12s, opacity 0.08s;
+}
+
+.ttt-btn-primary {
+  background: var(--primary, #1976d2);
+  color: #fff;
+}
+
+.ttt-btn-accent {
+  background: var(--accent, #fbc02d);
+  color: #fff;
+}
+
+.ttt-btn:active {
+  opacity: 0.85;
+  transform: translateY(1px) scale(0.98);
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 68px);
+  grid-template-rows: repeat(3, 68px);
+  gap: 12px;
+  margin: 1.4rem 0 1.4rem 0;
+  justify-content: center;
+}
+
+.ttt-square {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  background: var(--bg-secondary, #f8f9fa);
+  box-shadow: 0 1px 8px 0 #dde2e7a2;
+  font-size: 2.1rem;
+  font-family: inherit;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-color, #e9ecef);
+  outline: none;
+  transition: background 0.2s, color 0.15s, border 0.12s;
+  cursor: pointer;
+  user-select: none;
+}
+.ttt-square:disabled {
+  background: #f0f0f0;
+  color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.ttt-status {
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.14rem;
+  min-height: 32px;
+  font-weight: 500;
+  color: var(--secondary, #424242);
+  letter-spacing: 0.5px;
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 600px) {
+  .ttt-container { max-width: 98vw; padding: 1.3rem 0.6rem 1.7rem 0.6rem; }
+  .ttt-board { grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(3,52px); }
+  .ttt-square { width: 48px; height: 48px; font-size: 1.3rem; }
+  .ttt-title { font-size: 1.4rem; }
+  .ttt-btn { font-size: 0.95rem; padding: 0.44em 1em; }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
